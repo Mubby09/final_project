@@ -17,6 +17,12 @@ const postSchema = new Schema({
       createdAt: String
     }
   ],
+  dislikes: [
+    {
+      username: String,
+      createdAt: String
+    }
+  ],
   user: {
     type: Schema.Types.ObjectId,
     ref: "users"
