@@ -29,7 +29,7 @@ module.exports = {
   Mutation: {
     async createPost(_, { body }, context) {
       const user = authCheck(context);
-      // console.log(user);
+      console.log(user);
 
       const newPost = new Post({
         body,
