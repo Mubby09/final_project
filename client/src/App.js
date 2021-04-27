@@ -4,16 +4,19 @@ import Home from "../src/pages/Home";
 import Login from "../src/pages/Login";
 import Register from "../src/pages/Register";
 import Navbar from "./components/Navbar";
+import { Container } from "semantic-ui-react";
 
 import "semantic-ui-css/semantic.min.css";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
+      <Container>
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+      </Container>
     </Router>
   );
 }
