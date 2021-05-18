@@ -9,3 +9,12 @@
 body {
   background-color: coral !important;
 }
+
+.form-container {
+  width: 400px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}

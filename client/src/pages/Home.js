@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { Grid, Container } from "semantic-ui-react";
 import PostCard from "../components/PostCard";
 
-export default function Home() {
+function Home() {
   const {
     loading,
     data: { getPosts: posts }
@@ -17,16 +17,15 @@ export default function Home() {
           <h1>Recent Posts</h1>
         </Grid.Row>
         <Grid.Row>
-          {loading ? (
-            <h1>Loading Posts..</h1>
-          ) : (
-            posts &&
-            posts.map((post) => (
-              <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                <PostCard post={post} />
-              </Grid.Column>
-            ))
-          )}
+          {loading
+            ? "loading"
+            : // <h1>Loading Posts..</h1>
+              posts &&
+              posts.map((post) => (
+                <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
+                  <PostCard post={post} />
+                </Grid.Column>
+              ))}
         </Grid.Row>
       </Grid>
     </Container>
@@ -55,4 +54,4 @@ const FETCH_POST_QUERY = gql`
   }
 `;
 
-// export default Home;
+export default Home;
