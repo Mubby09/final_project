@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { Grid, Container } from "semantic-ui-react";
 import PostCard from "../components/PostCard";
 
-function Home() {
+export default function Home() {
   const {
     loading,
     data: { getPosts: posts }
@@ -54,4 +54,4 @@ const FETCH_POST_QUERY = gql`
   }
 `;
 
-export default Home;
+// export default Home;
