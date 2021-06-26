@@ -30,7 +30,7 @@ module.exports = {
     async createPost(_, { body }, context) {
       const user = authCheck(context);
 
-      if (args.body.trim() === "") {
+      if (body.trim() === "") {
         throw new Error("Post cannot be empty");
       }
 
@@ -41,11 +41,10 @@ module.exports = {
         createdAt: new Date().toISOString()
       });
       const post = await newPost.save();
-      context.pubsub.publish("NEW_P0ST", {
-        newPost: post
-      });
+      // context.pubsub.publish("NEW_P0ST", {
+      //   newPost: post
+      // });
       return post;
-      zz;
     },
 
     async deletePost(_, { postId }, context) {
